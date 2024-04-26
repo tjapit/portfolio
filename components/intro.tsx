@@ -2,6 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { BsArrowRight, BsLinkedin } from "react-icons/bs";
+import { HiDownload } from "react-icons/hi";
+import Link from "next/link";
+import { FaGithubSquare } from "react-icons/fa";
 
 export default function Intro() {
   return (
@@ -51,6 +55,45 @@ export default function Intro() {
         <b>3 years</b> of experience. I enjoy building <em>sites & apps</em>. My
         focus is <u>React & Go.</u>
       </motion.p>
+
+      <motion.div
+        className="px-4 flex flex-col sm:flex-row items-center justify-center gap-2 text-lg font-medium"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.1,
+        }}
+      >
+        <Link
+          href="#contact"
+          className="group px-7 py-3 flex items-center gap-2 bg-gray-900 text-white rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+        >
+          Contact me here{" "}
+          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+        </Link>
+        <a
+          href="/CV.pdf"
+          className="group px-7 py-3 flex items-center gap-2 bg-white rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition border border-black/10"
+          download
+        >
+          Download CV{" "}
+          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
+        </a>
+        <a
+          href="https://linkedin.com/in/timothyjapit"
+          target="_blank"
+          className="p-4 flex items-center gap-2 bg-white text-gray-700 rounded-full outline-none focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border border-black/10"
+        >
+          <BsLinkedin />
+        </a>
+        <a
+          href="https://github.com/tjapit"
+          target="_blank"
+          className="p-4 flex items-center gap-2 bg-white text-gray-700 rounded-full outline-none focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border border-black/10"
+        >
+          <FaGithubSquare />
+        </a>
+      </motion.div>
     </section>
   );
 }
