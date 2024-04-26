@@ -82,6 +82,7 @@ export default function Intro() {
         <a
           href="https://linkedin.com/in/timothyjapit"
           target="_blank"
+          rel="noopener"
           className="p-4 flex items-center gap-2 bg-white text-gray-700 rounded-full outline-none focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border border-black/10"
         >
           <BsLinkedin />
@@ -89,6 +90,7 @@ export default function Intro() {
         <a
           href="https://github.com/tjapit"
           target="_blank"
+          rel="noopener"
           className="p-4 flex items-center gap-2 bg-white text-gray-700 rounded-full outline-none focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border border-black/10"
         >
           <FaGithubSquare />
