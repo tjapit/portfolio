@@ -1,22 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import Link from "next/link";
 import { FaGithubSquare } from "react-icons/fa";
-import { useEffect, useRef } from "react";
-import { useActiveSectionContext } from "@/context/active-section-context";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function Intro() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0 });
-  const { setActiveSection, lastClicked } = useActiveSectionContext();
-
-  useEffect(() => {
-    if (isInView && Date.now() - lastClicked > 1000) setActiveSection("Home");
-  }, [isInView, lastClicked]);
+  const { ref } = useSectionInView({ sectionName: "Home" });
 
   return (
     <section

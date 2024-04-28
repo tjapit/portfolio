@@ -1,21 +1,14 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { projectsData } from "@/lib/data";
 import SectionHeading from "./section-heading";
 import Project from "./project";
-import { motion, useInView } from "framer-motion";
-import { useActiveSectionContext } from "@/context/active-section-context";
+import { motion } from "framer-motion";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function Projects() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.5 });
-  const { setActiveSection, lastClicked } = useActiveSectionContext();
-
-  useEffect(() => {
-    if (isInView && Date.now() - lastClicked > 1000)
-      setActiveSection("Projects");
-  }, [isInView, lastClicked]);
+  const { ref } = useSectionInView({ sectionName: "Projects", threshold: 0.5 });
 
   return (
     <motion.section

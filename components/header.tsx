@@ -4,10 +4,8 @@ import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
-import {
-  SectionName,
-  useActiveSectionContext,
-} from "@/context/active-section-context";
+import { useActiveSectionContext } from "@/context/active-section-context";
+import type { SectionName } from "@/lib/types";
 
 export default function Header() {
   const { activeSection, setActiveSection, setLastClicked } =
