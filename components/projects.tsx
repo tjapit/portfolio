@@ -10,11 +10,12 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 export default function Projects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.5 });
-  const { setActiveSection } = useActiveSectionContext();
+  const { setActiveSection, lastClicked } = useActiveSectionContext();
 
   useEffect(() => {
-    if (isInView) setActiveSection("Projects");
-  }, [isInView]);
+    if (isInView && Date.now() - lastClicked > 1000)
+      setActiveSection("Projects");
+  }, [isInView, lastClicked]);
 
   return (
     <motion.section

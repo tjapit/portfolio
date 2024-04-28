@@ -4,10 +4,19 @@ import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
-import { useActiveSectionContext } from "@/context/active-section-context";
+import {
+  SectionName,
+  useActiveSectionContext,
+} from "@/context/active-section-context";
 
 export default function Header() {
-  const { activeSection, setActiveSection } = useActiveSectionContext();
+  const { activeSection, setActiveSection, setLastClicked } =
+    useActiveSectionContext();
+
+  const handleClick = (name: SectionName) => {
+    setActiveSection(name);
+    setLastClicked(Date.now());
+  };
 
   return (
     <header className="z-50 relative">
@@ -43,7 +52,7 @@ export default function Header() {
                     "text-gray-950": activeSection === link.name,
                   },
                 )}
-                onClick={() => setActiveSection(link.name)}
+                onClick={() => handleClick(link.name)}
               >
                 {link.name}
 

@@ -3,7 +3,7 @@
 import { createContext, useContext, useState } from "react";
 import { links } from "@/lib/data";
 
-type SectionName = (typeof links)[number]["name"];
+export type SectionName = (typeof links)[number]["name"];
 
 type ActiveSectionContextProviderProps = {
   children: React.ReactNode;
@@ -12,6 +12,8 @@ type ActiveSectionContextProviderProps = {
 type ActiveSectionContextType = {
   activeSection: SectionName;
   setActiveSection: React.Dispatch<React.SetStateAction<SectionName>>;
+  lastClicked: number;
+  setLastClicked: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export const ActiveSectionContext =
@@ -21,12 +23,15 @@ export default function ActiveSectionContextProvider({
   children,
 }: ActiveSectionContextProviderProps) {
   const [activeSection, setActiveSection] = useState<SectionName>("Home");
+  const [lastClicked, setLastClicked] = useState(0); // to disable observer temporarily when user clicks on a navlink
 
   return (
     <ActiveSectionContext.Provider
       value={{
         activeSection,
         setActiveSection,
+        lastClicked,
+        setLastClicked,
       }}
     >
       {children}
