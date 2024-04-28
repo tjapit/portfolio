@@ -16,9 +16,9 @@ export default function Project({
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    // [animation start: bottom of viewport crosses top of the target,
-    // animation end: bottom of viewport has gone 33% beyond the end of the project]
-    offset: ["0 1", "1.33 1"],
+    // [animation start: start of the target (ref) meets the end of the viewport,
+    // animation end: end of the target (ref) meets the end of the viewport]
+    offset: ["start end", "end end"],
   });
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
