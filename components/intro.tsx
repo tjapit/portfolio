@@ -1,13 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import Link from "next/link";
 import { FaGithubSquare } from "react-icons/fa";
+import { useEffect, useRef } from "react";
+import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function Intro() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.5 });
+  const { setActiveSection } = useActiveSectionContext();
+
+  useEffect(() => {
+    if (isInView) setActiveSection("Home");
+  }, [isInView]);
+
   return (
     <section
       id="home"
