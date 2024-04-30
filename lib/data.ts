@@ -28,8 +28,8 @@ export const links = [
     hash: "#experience",
   },
   {
-    name: "Contact",
-    hash: "#contact",
+    name: "Connect",
+    hash: "#connect",
   },
 ] as const;
 

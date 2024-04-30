@@ -1,4 +1,5 @@
 import About from "@/components/about";
+import Connect from "@/components/connect";
 import Experience from "@/components/experience";
 import Intro from "@/components/intro";
 import Projects from "@/components/projects";
@@ -14,6 +15,7 @@ export default function Home() {
       <Projects />
       <Skills />
       <Experience />
+      <Connect />
     </main>
   );
 }

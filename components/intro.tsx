@@ -71,15 +71,26 @@ export default function Intro() {
         }}
       >
         <Link
-          href="#contact"
-          className="group px-7 py-3 flex items-center gap-2 bg-gray-900 text-white rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+          href="#connect"
+          className="group px-7 py-3 flex items-center gap-2 bg-gray-900 
+          text-white rounded-full outline-none 
+          focus:scale-110 
+          hover:scale-110 
+          hover:bg-gray-950 
+          active:scale-105 
+          transition"
         >
-          Contact me here{" "}
+          Connect with me here{" "}
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
         <a
           href="/CV.pdf"
-          className="group px-7 py-3 flex items-center gap-2 bg-white rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition border border-black/10"
+          className="group px-7 py-3 flex items-center gap-2 bg-white 
+          borderBlack rounded-full outline-none 
+          focus:scale-110 
+          hover:scale-110 
+          active:scale-105 
+          transition"
           download
         >
           Download CV{" "}
