@@ -7,9 +7,11 @@ import { HiDownload } from "react-icons/hi";
 import Link from "next/link";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
+import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function Intro() {
   const { ref } = useSectionInView({ sectionName: "Home" });
+  const { setActiveSection, setLastClicked } = useActiveSectionContext();
 
   return (
     <section
@@ -79,8 +81,12 @@ export default function Intro() {
           hover:bg-gray-950 
           active:scale-105 
           transition"
+          onClick={() => {
+            setActiveSection("Connect");
+            setLastClicked(Date.now());
+          }}
         >
-          Connect with me here{" "}
+          Connect with me{" "}
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
         <a
