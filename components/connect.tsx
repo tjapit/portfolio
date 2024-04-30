@@ -4,6 +4,7 @@ import { useSectionInView } from "@/lib/hooks";
 import SectionHeading from "./section-heading";
 import { FaPaperPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { sendEmail } from "@/actions/sendEmail";
 
 export default function Connect() {
   const { ref } = useSectionInView({
@@ -34,15 +35,26 @@ export default function Connect() {
         or through this form,
       </p>
 
-      <form action="" className="mt-10 flex flex-col">
+      <form
+        action={async (formData) => {
+          await sendEmail(formData);
+        }}
+        className="mt-10 flex flex-col"
+      >
         <input
+          name="senderEmail"
           type="email"
           placeholder="Your Email"
           className="h-14 px-4 rounded-lg borderBlack outline-black"
+          maxLength={500}
+          required
         />
         <textarea
+          name="message"
           className="h-52 my-3 p-4 rounded-lg borderBlack outline-black"
           placeholder="Your message"
+          maxLength={5000}
+          required
         ></textarea>
         <button
           type="submit"
