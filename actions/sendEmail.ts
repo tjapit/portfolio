@@ -1,6 +1,6 @@
 "use server";
 
-import { validateString } from "@/lib/utils";
+import { getErrorMessage, validateString } from "@/lib/utils";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -22,13 +22,15 @@ export const sendEmail = async (formData: FormData) => {
 
   try {
     await resend.emails.send({
-      from: "Portfolio Connect <onboarding@resend.com>",
-      to: "timothy.japit@gmail.com",
+      from: "Portfolio Connect <onboarding@resend.dev>",
+      to: String(process.env.RESEND_EMAIL_TO),
       subject: "Message from Portfolio Connect form",
       reply_to: String(senderEmail),
       text: String(message),
     });
-  } catch (e) {
-    console.error(e);
+  } catch (error: unknown) {
+    return {
+      error: getErrorMessage(error),
+    };
   }
 };
