@@ -48,10 +48,8 @@ export default function Header() {
               <Link
                 href={link.hash}
                 className={clsx(
-                  "p-3 flex w-full items-center justify-center hover:text-gray-950 transition",
+                  "p-3 flex w-full items-center justify-center hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300",
                   {
-                    "dark:text-gray-500 dark:hover:text-gray-300":
-                      document.documentElement.classList.contains("dark"),
                     "text-gray-950 dark:text-gray-200":
                       activeSection === link.name,
                   },
