@@ -65,7 +65,11 @@ export default function Intro() {
       </motion.h1>
 
       <motion.div
-        className="px-4 flex flex-col sm:flex-row items-center justify-center gap-2 text-lg font-medium"
+        className="px-4 
+        flex flex-col items-center justify-center gap-2 
+        text-lg font-medium
+        sm:flex-row
+        "
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -80,7 +84,8 @@ export default function Intro() {
           hover:scale-110 
           hover:bg-gray-950 
           active:scale-105 
-          transition"
+          transition
+          "
           onClick={() => {
             setActiveSection("Connect");
             setLastClicked(Date.now());
@@ -93,10 +98,12 @@ export default function Intro() {
           href="/CV.pdf"
           className="group px-7 py-3 flex items-center gap-2 bg-white 
           borderBlack rounded-full outline-none 
+          dark:bg-white/10 dark:text-white/60 dark:hover:text-white
           focus:scale-110 
-          hover:scale-110 
+          hover:scale-110
           active:scale-105 
-          transition"
+          transition
+          "
           download
         >
           Download CV{" "}
@@ -106,7 +113,14 @@ export default function Intro() {
           href="https://linkedin.com/in/timothyjapit"
           target="_blank"
           rel="noopener"
-          className="p-4 flex items-center gap-2 bg-white text-gray-700 rounded-full outline-none focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack"
+          className="p-4 flex items-center gap-2 bg-white text-gray-700 
+          rounded-full outline-none cursor-pointer borderBlack
+          dark:bg-white/10 dark:text-white/60 dark:hover:text-white
+          focus:scale-[1.15] 
+          hover:scale-[1.15] hover:text-gray-950
+          active:scale-105 
+          transition
+          "
         >
           <BsLinkedin />
         </a>
@@ -114,7 +128,13 @@ export default function Intro() {
           href="https://github.com/tjapit"
           target="_blank"
           rel="noopener"
-          className="p-4 flex items-center gap-2 bg-white text-gray-700 rounded-full outline-none focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack"
+          className="p-4 flex items-center gap-2 bg-white text-gray-700 
+          rounded-full outline-none cursor-pointer borderBlack
+          dark:bg-white/10 dark:text-white/60 dark:hover:text-white
+          focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 
+          active:scale-105 
+          transition
+          "
         >
           <FaGithubSquare />
         </a>
