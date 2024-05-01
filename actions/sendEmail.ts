@@ -22,20 +22,24 @@ export const sendEmail = async (formData: FormData) => {
     };
   }
 
-  try {
-    await resend.emails.send({
-      from: "Portfolio Connect <onboarding@resend.dev>",
-      to: String(process.env.RESEND_EMAIL_TO),
-      subject: "Message from Portfolio Connect form",
-      reply_to: String(senderEmail),
-      react: React.createElement(ConnectFormEmail, {
-        message: String(message),
-        senderEmail: String(senderEmail),
-      }),
-    });
-  } catch (error: unknown) {
-    return {
-      error: getErrorMessage(error),
-    };
+  const { data, error: errorResponse } = await resend.emails.send({
+    from: "Portfolio Connect <onboarding@resend.dev>",
+    to: String(process.env.RESEND_EMAIL_TO),
+    subject: "Message from Portfolio Connect form",
+    reply_to: String(senderEmail),
+    react: React.createElement(ConnectFormEmail, {
+      message: String(message),
+      senderEmail: String(senderEmail),
+    }),
+  });
+
+  let error = undefined;
+  if (errorResponse) {
+    error = getErrorMessage(errorResponse);
   }
+
+  return {
+    data,
+    error,
+  };
 };

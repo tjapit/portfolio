@@ -5,12 +5,15 @@ import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitButton from "./submit-button";
+import toast from "react-hot-toast";
+import { useRef } from "react";
 
 export default function Connect() {
   const { ref } = useSectionInView({
     sectionName: "Connect",
     threshold: "some",
   });
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
   return (
     <motion.section
@@ -37,7 +40,17 @@ export default function Connect() {
 
       <form
         action={async (formData) => {
-          await sendEmail(formData);
+          const { error } = await sendEmail(formData);
+
+          if (error) {
+            toast.error(error);
+            return;
+          }
+
+          if (textAreaRef.current) {
+            textAreaRef.current.value = "";
+          }
+          toast.success("Email sent successfully!");
         }}
         className="mt-10 flex flex-col"
       >
@@ -50,6 +63,7 @@ export default function Connect() {
           required
         />
         <textarea
+          ref={textAreaRef}
           name="message"
           className="h-52 my-3 p-4 rounded-lg borderBlack outline-black"
           placeholder="Your message"
