@@ -15,6 +15,20 @@ export default function Connect() {
   });
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
+  const handleSubmit = async (formData: FormData) => {
+    const { error } = await sendEmail(formData);
+
+    if (error) {
+      toast.error(error);
+      return;
+    }
+
+    if (textAreaRef.current) {
+      textAreaRef.current.value = "";
+    }
+    toast.success("Email sent successfully!");
+  };
+
   return (
     <motion.section
       ref={ref}
@@ -38,22 +52,7 @@ export default function Connect() {
         or through this form,
       </p>
 
-      <form
-        action={async (formData) => {
-          const { error } = await sendEmail(formData);
-
-          if (error) {
-            toast.error(error);
-            return;
-          }
-
-          if (textAreaRef.current) {
-            textAreaRef.current.value = "";
-          }
-          toast.success("Email sent successfully!");
-        }}
-        className="mt-10 flex flex-col"
-      >
+      <form action={handleSubmit} className="mt-10 flex flex-col">
         <input
           name="senderEmail"
           type="email"
