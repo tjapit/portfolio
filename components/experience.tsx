@@ -9,8 +9,10 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { useSectionInView } from "@/lib/hooks";
+import { useThemeContext } from "@/context/theme-context";
 
 export default function Experience() {
+  const { theme } = useThemeContext();
   const { ref } = useSectionInView({
     sectionName: "Experience",
     threshold: 0.75,
@@ -25,19 +27,24 @@ export default function Experience() {
             <VerticalTimelineElement
               visible // for some reason it's not visible without this
               contentStyle={{
-                background: "#f3f4f6",
+                background:
+                  theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, .05)",
                 boxShadow: "none",
                 border: "1px solid rgba(0, 0, 0, 0.05)",
                 textAlign: "left",
                 padding: "1.3rem 2rem",
               }}
               contentArrowStyle={{
-                borderRight: "0.4rem solid #9ca3af",
+                borderRight:
+                  theme === "light"
+                    ? "0.4rem solid #9ca3af"
+                    : "0.4rem solid rgba(255,255,255,.05)",
               }}
               date={experience.date}
               icon={experience.icon}
               iconStyle={{
-                background: "white",
+                background:
+                  theme === "light" ? "white" : "rgba(255,255,255,.15)",
                 fontSize: "1.5rem",
               }}
             >
@@ -45,7 +52,7 @@ export default function Experience() {
               <p className="!mt-0 !font-normal !text-sm">
                 {experience.location}
               </p>
-              <p className="!mt-1 !font-normal text-gray-700">
+              <p className="!mt-2 !font-normal text-gray-700 dark:text-white/75">
                 {experience.description}
               </p>
             </VerticalTimelineElement>

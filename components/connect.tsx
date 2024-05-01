@@ -40,7 +40,8 @@ export default function Connect() {
       viewport={{ once: true }}
     >
       <SectionHeading>Connect with Me</SectionHeading>
-      <p className="text-gray-700 -mt-6">
+
+      <p className="-mt-6 text-gray-700 dark:text-white/75">
         Please contact me directly at{" "}
         <a
           href="mailto:timothy.japit@gmail.com"
@@ -52,19 +53,30 @@ export default function Connect() {
         or through this form,
       </p>
 
-      <form action={handleSubmit} className="mt-10 flex flex-col">
+      <form
+        action={handleSubmit}
+        className="mt-10 flex flex-col dark:text-black"
+      >
         <input
           name="senderEmail"
           type="email"
           placeholder="Your Email"
-          className="h-14 px-4 rounded-lg borderBlack outline-black"
+          className="h-14 px-4 rounded-lg borderBlack outline-black
+          dark:bg-white dark:bg-opacity-60 dark:focus:bg-opacity-100 dark:outline-none
+          dark:placeholder:text-white/60
+          transition-all
+          "
           maxLength={500}
           required
         />
         <textarea
           ref={textAreaRef}
           name="message"
-          className="h-52 my-3 p-4 rounded-lg borderBlack outline-black"
+          className="h-52 my-3 p-4 rounded-lg borderBlack outline-black
+          dark:bg-white dark:bg-opacity-60 dark:focus:bg-opacity-100 dark:outline-none
+          dark:placeholder:text-white/60
+          transition-all
+          "
           placeholder="Your message"
           maxLength={5000}
           required
