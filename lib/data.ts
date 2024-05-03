@@ -92,17 +92,7 @@ export const projectsData = [
   },
 ] as const;
 
-export const skillsData = [
-  "HTML",
-  "CSS",
-  "JS",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Git",
-  "Tailwind",
-  "Redux",
-  "Framer Motion",
+export const backendSkillsData = [
   "Go",
   "Gin",
   "Gorm",
@@ -113,4 +103,17 @@ export const skillsData = [
   "Flask",
   "SQLite",
   "Docker",
+] as const;
+
+export const frontendSkillsData = [
+  "HTML",
+  "CSS",
+  "JS",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Git",
+  "Tailwind",
+  "Redux",
+  "Framer Motion",
 ] as const;
