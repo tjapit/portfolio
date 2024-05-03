@@ -35,51 +35,59 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Graduated University",
+    location: "Raleigh, NC",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+      "I graduated from NC State University with a Bachelors in Aerospace Engineering, and decided to pursue programming as a career and landed on web development.",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: "2021",
+  },
+  {
+    title: "Sealabs ID Digital Academy",
+    location: "Jakarta, ID",
+    description:
+      "I enrolled in a bootcamp training as a full-stack developer. The stack included React, TypeScript, Tailwind on the front-end and Go, Gin, Gorm, Redis, and PostgreSQL on the backend.",
+    icon: React.createElement(FaReact),
+    date: "2022",
   },
   {
     title: "Front-End Developer",
-    location: "Orlando, FL",
+    location: "Jakarta, ID",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+      "After the bootcamp, I was hired by Shopee to work as a front-end developer for 1 year.",
     icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+    date: "2022 - 2023",
   },
   {
     title: "Full-Stack Developer",
-    location: "Houston, TX",
+    location: "Jakarta, ID",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: "2021 - present",
+      "I'm currently working as a freelance full-stack webdev, my main stack is React & Go. I'm open to full-time opportunities.",
+    icon: React.createElement(CgWorkAlt),
+    date: "2023-Present",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Passio",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+      "I completed a full-stack dating app project within 2 weeks during bootcamp. Users can match with other users and plan dates on available dating venues.",
+    tags: ["React", "JS", "Tailwind", "Go", "Gin", "PostgreSQL"],
     imageUrl: corpcommentImg,
   },
   {
-    title: "rmtDev",
+    title: "flask-mig",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+      "Absence/Activity recorder for employees. People can check-in/out, record their tasks, and manage or edit their existing tasks.",
+    tags: ["Python", "Flask", "SQLite"],
     imageUrl: rmtdevImg,
   },
   {
-    title: "Word Analytics",
+    title: "Mimymut",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+      "Brand portfolio for Mimymut, a shop that sells hand-woven tote bags.",
+    tags: ["React", "TypeScript", "Tailwind", "Go", "Gin", "PostgreSQL"],
     imageUrl: wordanalyticsImg,
   },
 ] as const;
@@ -87,21 +95,22 @@ export const projectsData = [
 export const skillsData = [
   "HTML",
   "CSS",
-  "JavaScript",
+  "JS",
   "TypeScript",
   "React",
   "Next.js",
-  "Node.js",
   "Git",
   "Tailwind",
-  "Prisma",
-  "MongoDB",
   "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
+  "Framer Motion",
+  "Go",
+  "Gin",
+  "Gorm",
+  "Redis",
   "PostgreSQL",
   "Python",
   "Django",
-  "Framer Motion",
+  "Flask",
+  "SQLite",
+  "Docker",
 ] as const;
