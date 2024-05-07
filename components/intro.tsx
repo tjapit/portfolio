@@ -32,14 +32,14 @@ export default function Intro() {
             <Image
               src="/tim.jpg"
               alt="Tim portrait"
-              width="192"
-              height="192"
+              width="240"
+              height="240"
               priority={true}
-              className="h-24 w-24 object-cover rounded-full border-[.35rem] border-white shadow-xl"
+              className="object-cover rounded-full border-[.35rem] border-white shadow-xl"
             />
           </motion.div>
           <motion.span
-            className="absolute bottom-0 right-0 text-4xl"
+            className="absolute bottom-2 right-2 text-4xl"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -80,6 +80,7 @@ export default function Intro() {
           href="#connect"
           className="group px-7 py-3 flex items-center gap-2 bg-gray-900 
           text-white rounded-full outline-none 
+          dark:bg-white dark:text-gray-900
           focus:scale-110 
           hover:scale-110 
           hover:bg-gray-950 
