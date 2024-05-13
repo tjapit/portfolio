@@ -2,9 +2,9 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+import passioImg from "@/public/passio.png";
+import flaskmigImg from "@/public/flaskmig.png";
+import mimymutImg from "@/public/mimymut.png";
 
 export const links = [
   {
@@ -72,23 +72,31 @@ export const projectsData = [
   {
     title: "Passio",
     description:
-      "I completed a full-stack dating app project within 2 weeks during bootcamp. Users can match with other users and plan dates on available dating venues.",
+      "Full-stack dating app. Users can match with other users and plan dates on available dating venues.",
     tags: ["React", "JS", "Tailwind", "Go", "Gin", "PostgreSQL"],
-    imageUrl: corpcommentImg,
+    imageUrl: passioImg,
   },
   {
-    title: "flask-mig",
+    title: "MIG Absence",
     description:
       "Absence/Activity recorder for employees. People can check-in/out, record their tasks, and manage or edit their existing tasks.",
     tags: ["Python", "Flask", "SQLite"],
-    imageUrl: rmtdevImg,
+    imageUrl: flaskmigImg,
   },
   {
     title: "Mimymut",
     description:
-      "Brand portfolio for Mimymut, a shop that sells hand-woven tote bags.",
-    tags: ["React", "TypeScript", "Tailwind", "Go", "Gin", "PostgreSQL"],
-    imageUrl: wordanalyticsImg,
+      " Brand portfolio for Mimymut, a shop that sells hand-woven tote bags. [UNDER CONSTRUCTION]",
+    tags: [
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "Go",
+      "Gin",
+      "PostgreSQL",
+      "Docker",
+    ],
+    imageUrl: mimymutImg,
   },
 ] as const;
 
