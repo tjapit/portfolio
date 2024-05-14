@@ -5,6 +5,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import passioImg from "@/public/passio.png";
 import flaskmigImg from "@/public/flaskmig.png";
 import mimymutImg from "@/public/mimymut.png";
+import rtdtImg from "@/public/rtdt.png";
 
 export const links = [
   {
@@ -70,20 +71,6 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "Passio",
-    description:
-      "Full-stack dating app. Users can match with other users and plan dates on available dating venues.",
-    tags: ["React", "JS", "Tailwind", "Go", "Gin", "PostgreSQL"],
-    imageUrl: passioImg,
-  },
-  {
-    title: "MIG Absence",
-    description:
-      "Absence/Activity recorder for employees. People can check-in/out, record their tasks, and manage or edit their existing tasks.",
-    tags: ["Python", "Flask", "SQLite"],
-    imageUrl: flaskmigImg,
-  },
-  {
     title: "Mimymut",
     description:
       " Brand portfolio for Mimymut, a shop that sells hand-woven tote bags. [UNDER CONSTRUCTION]",
@@ -97,6 +84,27 @@ export const projectsData = [
       "Docker",
     ],
     imageUrl: mimymutImg,
+  },
+  {
+    title: "MIG Absence",
+    description:
+      "Absence/Activity recorder for employees. People can check-in/out, record their tasks, and manage or edit their existing tasks.",
+    tags: ["Python", "Flask", "SQLite"],
+    imageUrl: flaskmigImg,
+  },
+  {
+    title: "Passio",
+    description:
+      "Full-stack dating app. Users can match with other users and plan dates on available dating venues.",
+    tags: ["React", "JS", "Tailwind", "Go", "Gin", "PostgreSQL"],
+    imageUrl: passioImg,
+  },
+  {
+    title: "RTDT",
+    description:
+      "CLI program in Python to communicate wirelessly to a rover to send commands (i.e. move, steer, show status, take picture, ftp) through TCP.",
+    tags: ["Python", "Linux", "Networking", "Embedded Systems"],
+    imageUrl: rtdtImg,
   },
 ] as const;
 
